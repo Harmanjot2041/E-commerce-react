@@ -1,0 +1,87 @@
+<div class="box12">  
+    <a class="back" [routerLink]="['/page2']">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+         class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+          Back to Dashboard
+          <!-- <i class ="icon-long-arrow-right"></i> -->
+    </a>  
+</div><br/>
+<div class="container top  shadow-lg bg-white rounder" style="height: 980px;">
+    <table style="width: 100%;">
+        <th style="padding-left: 2%;">
+            Product code
+        </th>
+        <th style="width: 24%;">
+          Description
+      </th>
+      <th style="width: 5%;">
+          Unit
+      </th>
+      <th style="width: 5%;">
+          Cost
+      </th>
+      <th style="width: 5%; ">
+          RSP
+      </th>
+      <th style="width: 7%;">
+          Margin
+      </th>
+      <th>
+          Category
+      </th>
+      <th>
+          Last order
+      </th>
+      <th style="width: 17%;">
+          Order Qty.
+      </th>
+      <tr *ngFor="let product of products">
+          <td style="padding-left: 2%; border-left: 6px solid" [ngStyle]="{'border-color': product.color}">
+              <input type="checkbox" style="zoom: 1.16;"> {{product.code}}
+          </td>
+          <td style="padding-left: 0px;">
+              <div class="row">
+                  <div class="col-4">
+                      <img src="{{product.img}}"  style="width: 94%; height: 98%;" alt="kurkre">
+                  </div>
+                  <div class="col-8" class="foto-content">
+                      {{product.description}}
+                  </div>
+              </div>
+          </td>
+          <td style="font-size: 15px; padding-right: 0px;">
+              {{product.unit}}
+          </td>
+          <td style="font-size: 15px; padding-right: 0px;">
+              {{product.Cost}}
+          </td>
+          <td style="font-size: 15px; padding-right: 0px;">
+              {{product.rsp}}
+          </td>
+          <td style="font-size: 15px; padding-right: 0px;">
+              {{product.Margin}}
+          </td>
+          <td style="font-size: 15px; padding-right: 0px;">
+              {{product.category}}
+          </td>
+          <td style="font-size: 15px; padding-right: 0px;">
+              {{product.date}}
+          </td>
+          <td style="font-size: 15px; color: #00a3da; padding-right: 0px;">
+            <div style="width: 50%;" class="text-center">
+            <button class="btn btn-outline-danger" (click)="minus()" style="width: 15px; height: 27px; vertical-align: middle;
+            text-align: center;">-</button>
+            <input type="text" [value]="quantity" style="width: 27px;height: 23px;">
+            <button class="btn btn-outline-danger" (click)="plus()" style="width: 15px; height: 27px;"><i class="icon-plus" style=""></i></button>
+            </div>
+          </td>
+      </tr>
+     
+    </table><br/>
+    
+    <button class="btn btn-outline-danger btn-bottom mt-2 bm-2 mr-2" >Add to Basket</button>
+    <button class="btn btn-outline-danger mt-2 btn-bottom bm-2 mr-2" >Add to Suggested Products</button>
+
+</div>
